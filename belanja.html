@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRO Harvest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
+        .menu {
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            margin: 10px 0;
+            font-weight: bold;
+            padding: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .menu a:hover {
+            background-color: #FFF;
+            color: #3cb371;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            min-height: calc(100vh - 60px);
+            margin-bottom: 60px;
+        }
+        .sidebar-right {
+            background-color: #66cdaa;
+            width: 20%;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+        }
+        .content {
+            background-color: #B5D1E0;
+            width: 80%;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            background-image: url('path/to/your/background-image.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .sidebar-right a img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.7em;
+        }
+        .shopping-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .shopping-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .shopping-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-wrap: wrap;
+                height: auto;
+            }
+            .sidebar-right, .content {
+                width: 100%;
+            }
+            .menu {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .menu a {
+                margin: 0 15px;
+            }
+        }
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 2px;
+            font-size: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="element/header1.png" alt="Agro Harvest Header">
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="shopping-section">
+                <div class="shopping-item">
+                    <a href="tomatt.html">
+                        <img src="element/tomat1.png" alt="Tomat">
+                    </a>
+                    <p>TOMAT</p>
+                    <p>Rp 8,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="sawi1.html">
+                        <img src="element/sawi(1).png" alt="Sawi">
+                    </a>
+                    <p>SAWI</p>
+                    <p>Rp 5,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="buncis1.html">
+                        <img src="element/buncis(1).png" alt="Buncis">
+                    </a>
+                    <p>BUNCIS</p>
+                    <p>Rp 7,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="wortel1.html">
+                        <img src="element/wortel (3).png" alt="Wortel">
+                    </a>
+                    <p>WORTEL</p>
+                    <p>Rp 12,500.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="okra1.html">
+                        <img src="element/okra(2).png" alt="Okra">
+                    </a>
+                    <p>OKRA</p>
+                    <p>Rp 21,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="jamur1.html">
+                        <img src="element/jamur(4).png" alt="Jamur">
+                    </a>
+                    <p>JAMUR</p>
+                    <p>Rp 15,000.00</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="tomatt.html">
+                        <img src="element/romen(8).png" alt="Romen">
+                    </a>
+                    <p>ROMEN</p>
+                    <p>Rp 12,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="terong1.html">
+                        <img src="element/terong(2).png" alt="Terong">
+                    </a>
+                    <p>TERONG</p>
+                    <p>Rp 7,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="sereh1.html">
+                        <img src="element/sereh(1).png" alt="Sereh">
+                    </a>
+                    <p>SEREH</p>
+                    <p>Rp 1,000.00/batang</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="paprika1.html">
+                        <img src="element/paprika(4).png" alt="Paprika">
+                    </a>
+                    <p>PAPRIKA</p>
+                    <p>Rp 65,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="kol1.html">
+                        <img src="element/kol(7).png" alt="Kol">
+                    </a>
+                    <p>KOL</p>
+                    <p>Rp 3,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="kolungu 1.html">
+                        <img src="element/kolungu(3).png" alt="Kol Ungu">
+                    </a>
+                    <p>KOL UNGU</p>
+                    <p>Rp 25,000.00/KG</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="brokoli1.html">
+                        <img src="element/brokoli(6).png" alt="Brokoli">
+                    </a>
+                    <p>BROKOLI</p>
+                    <p>Rp 10,000.00/kg</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+                <div class="shopping-item">
+                    <a href="selada.html">
+                        <img src="element/selada(5).png" alt="Selada Keriting">
+                    </a>
+                    <p>SELADA KERITING</p>
+                    <p>Rp 13,500.00</p>
+                    <button onclick="window.location.href='belidisini.html'">beli</button>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-right">
+            <div class="menu">
+                <a href="index.html">BERANDA</a>
+                <a href="belanja.html">CATALOG</a>
+                <a href="about.html">TENTANG KAMI</a>
+                <a href="contactus.html">KONTAK</a>
+            </div>
+            <a href="https://example.com">
+                <img src="element/left1.png" alt="Link Image">
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <h3>Footer</h3>
+    </div>
+</body>
+</html>

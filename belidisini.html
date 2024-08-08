@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pembayaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .button {
+            background-color: #3cb371;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #2e8b57;
+        }
+        #bank-options, #ewallet-options {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Formulir Pembayaran</h1>
+        </div>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="barang">Pilih Barang</label>
+                <select id="barang" name="barang" required>
+                    <option value="">Pilih Barang</option>
+                    <option value="tomat" data-price="8000">Tomat - Rp 8,000.00/kg</option>
+                    <option value="sawi" data-price="5000">Sawi - Rp 5,000.00/kg</option>
+                    <option value="buncis" data-price="7000">Buncis - Rp 7,000.00/kg</option>
+                    <option value="wortel" data-price="12500">Wortel - Rp 12,500.00/kg</option>
+                    <option value="okra" data-price="21000">Okra - Rp 21,000.00/kg</option>
+                    <option value="jamur" data-price="15000">Jamur - Rp 15,000.00</option>
+                    <option value="romen" data-price="12000">Romen - Rp 12,000.00/kg</option>
+                    <option value="terong" data-price="7000">Terong - Rp 7,000.00/kg</option>
+                    <option value="sereh" data-price="1000">Sereh - Rp 1,000.00/batang</option>
+                    <option value="paprika" data-price="65000">Paprika - Rp 65,000.00/kg</option>
+                    <option value="kol" data-price="3000">Kol - Rp 3,000.00/kg</option>
+                    <option value="kol-ungu" data-price="25000">Kol Ungu - Rp 25,000.00/kg</option>
+                    <option value="brokoli" data-price="10000">Brokoli - Rp 10,000.00/kg</option>
+                    <option value="selada" data-price="13500">Selada Keriting - Rp 13,500.00</option>
+					<option value="selada" data-price="13500">PROMO 1 - Rp 39,000.00</option>
+					<option value="selada" data-price="13500">PROMO 2 - Rp 16,000.00</option>
+					<option value="selada" data-price="13500">PROMO 3 - Rp 42,000.00</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat Pengiriman</label>
+                <input type="text" id="alamat" name="alamat" required>
+            </div>
+            <div class="form-group">
+                <label for="telepon">Nomor Telepon</label>
+                <input type="tel" id="telepon" name="telepon" required>
+            </div>
+            <div class="form-group">
+                <label for="metode-pembayaran">Metode Pembayaran</label>
+                <select id="metode-pembayaran" name="metode-pembayaran" required>
+                    <option value="">Pilih Metode Pembayaran</option>
+                    <option value="transfer-bank">Transfer Bank</option>
+                    <option value="ewallet">E-Wallet</option>
+                </select>
+            </div>
+            <div class="form-group" id="bank-options">
+                <label for="bank">Pilih Bank</label>
+                <select id="bank" name="bank">
+                    <option value="bca">BCA NO REK 1480000 ATAS NAMA DZIKRI</option>
+                    <option value="bni">BNI NO REK 5200000 ATAS NAMA DZIKRI</option>
+                    <option value="mandiri">Mandiri NO REK 11022222 ATAS NAMA DZIKRI</option>
+                </select>
+            </div>
+            <div class="form-group" id="ewallet-options">
+                <label for="ewallet">Pilih E-Wallet</label>
+                <select id="ewallet" name="ewallet">
+                    <option value="dana">Dana NO 08123456789</option>
+                    <option value="ovo">OVO NO 08123456789</option>
+                    <option value="gopay">GoPay NO 08123456789</option>
+                </select>
+            </div>
+            <button type="submit" class="button">Bayar Sekarang</button>
+        </form>
+        <div id="invoice" style="display:none;">
+            <h2>Rincian Pembayaran</h2>
+            <p id="invoice-item"></p>
+            <p id="invoice-price"></p>
+            <p><strong>Nama:</strong> <span id="invoice-name"></span></p>
+            <p><strong>Alamat:</strong> <span id="invoice-address"></span></p>
+            <p><strong>Nomor Telepon:</strong> <span id="invoice-phone"></span></p>
+            <p><strong>Metode Pembayaran:</strong> <span id="invoice-payment"></span></p>
+            <p id="invoice-ewallet" style="display: none;"><strong>Jenis E-Wallet:</strong> <span id="invoice-ewallet-type"></span></p>
+            <p id="invoice-bank" style="display: none;"><strong>Bank:</strong> <span id="invoice-bank-name"></span></p>
+        </div>
+    </div>
+    <script>
+        // Show/hide payment method specific options
+        document.getElementById('metode-pembayaran').addEventListener('change', function() {
+            const bankOptions = document.getElementById('bank-options');
+            const ewalletOptions = document.getElementById('ewallet-options');
+            const selectedMethod = this.value;
+
+            bankOptions.style.display = (selectedMethod === 'transfer-bank') ? 'block' : 'none';
+            ewalletOptions.style.display = (selectedMethod === 'ewallet') ? 'block' : 'none';
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the selected item and its price
+            const barangSelect = document.getElementById('barang');
+            const selectedOption = barangSelect.options[barangSelect.selectedIndex];
+            const itemName = selectedOption.text;
+            const itemPrice = selectedOption.getAttribute('data-price');
+
+            // Get other form values
+            const name = document.getElementById('nama').value;
+            const address = document.getElementById('alamat').value;
+            const phone = document.getElementById('telepon').value;
+            const paymentMethod = document.getElementById('metode-pembayaran').options[
+                document.getElementById('metode-pembayaran').selectedIndex
+            ].text;
+            const ewalletOption = document.getElementById('ewallet').value;
+            const ewalletText = ewalletOption ? document.getElementById('ewallet').options[
+                document.getElementById('ewallet').selectedIndex
+            ].text : '';
+            const bankOption = document.getElementById('bank').value;
+            const bankText = bankOption ? document.getElementById('bank').options[
+                document.getElementById('bank').selectedIndex
+            ].text : '';
+
+            // Display the invoice details
+            document.getElementById('invoice-item').innerText = `Barang: ${itemName}`;
+            document.getElementById('invoice-price').innerText = `Harga: Rp ${itemPrice}`;
+            document.getElementById('invoice-name').innerText = name;
+            document.getElementById('invoice-address').innerText = address;
+            document.getElementById('invoice-phone').innerText = phone;
+            document.getElementById('invoice-payment').innerText = paymentMethod;
+            document.getElementById('invoice-ewallet').style.display = 'none';
+            document.getElementById('invoice-bank').style.display = 'none';
+
+            if (paymentMethod === 'E-Wallet') {
+                document.getElementById('invoice-ewallet').style.display = 'block';
+                document.getElementById('invoice-ewallet-type').innerText = ewalletText;
+            } else if (paymentMethod === 'Transfer Bank') {
+                document.getElementById('invoice-bank').style.display = 'block';
+                document.getElementById('invoice-bank-name').innerText = bankText;
+            }
+
+            // Show the invoice
+            document.getElementById('invoice').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
